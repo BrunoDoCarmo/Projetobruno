@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>		
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="css/login.css">
+		<title>Login</title>
+	</head>
+	<body>
+    <div class="main-login">
+      <div class="left-login">
+        <h1>
+          Faça login
+          <br>
+          E entre para o nosso time
+        </h1>
+        <img src="img/login/animation.svg" alt="" class="left-login-img">
+      </div>
+      <div class="right-login">
+        <div class="card-login">
+          <h1>
+            <div id="acessar">
+              Acessar
+            </div>
+          </h1>
+          <h1>
+            <div id="autenticando"></div>
+          </h1>
+          <img src="img/preloader.gif" alt="" class="preloader">
+          <div class="textfield">
+            <input id="user" type="text" name="user" placeholder="Usuário" autofocus>
+          </div>
+          <div class="textfield">
+            <input id="pass" type="password" name="pass" placeholder="Senha">
+          </div>
+          <button class="btn btn-login" onclick="acessar()">Login</button>
+        </div>
+      </div>
+    </div>
+		<script src="js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+@import '../principal/navbar.css';
+.home .text {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0 40px;
+}
