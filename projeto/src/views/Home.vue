@@ -1,16 +1,19 @@
 <template>
   <div id="home">
-    <AppTopNavigator />
+    <AppTopNavigation />
+    <AppHome />
   </div>
 </template>
 
 <script>
-import AppTopNavigator from "../components/AppTopNavigation.vue";
-// import '../App.css';
+import AppTopNavigation from "../components/AppTopNavigation.vue";
+import AppHome from "../components/AppHome.vue";
+import '../assets/css/App.css';
 export default {
   name: 'Home',
   components: {
-    AppTopNavigator,
+    AppTopNavigation,
+    AppHome,
   }
 };
 </script>

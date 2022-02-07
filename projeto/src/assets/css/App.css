@@ -15,9 +15,6 @@
   --border:.2rem solid rgba(0,0,0,.1);
   --outline:.1rem solid rgba(0,0,0,.1);
   --outline-hover:.2rem solid var(--black);
-  --home-background-image: url('./assets/Img/Home/Tecnology-Computer.jpg');
-  --background-description: url('./assets/Img/background-description.jpg');
-  --about-image: url('./assets/Img/Contact/pexels-olia-danilevich-5313361.jpg');
 }
 * {
   font-family: 'Poppins', sans-serif;
@@ -34,7 +31,7 @@
   transition: .2s linear;
 }
 html {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 6%;
@@ -48,7 +45,7 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: var(--font-color-hover);
 }
-section,footer {
+/* section,footer {
   padding: 5rem 9%;
 }
 .btn {
@@ -68,7 +65,7 @@ section,footer {
   background: var(--black);
   font-weight: bolder;
   color: var(--white);
-}
+} */
 .heading {
   text-align: center;
   margin-bottom: 2.5rem;
