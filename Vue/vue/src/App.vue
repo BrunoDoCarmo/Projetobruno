@@ -8,6 +8,7 @@
 import AppHome from './views/AppHome.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
+import './App.css'
 
 export default {
   name: 'App',
