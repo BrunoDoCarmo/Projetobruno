@@ -8,12 +8,16 @@
 import AppHome from './views/Home.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
+import 'font-awesome/css/font-awesome.css'
 import './App.css'
 
 export default {
   name: 'App',
   components: {
     AppHome
+  },
+  methods: {
+
   }
 }
 </script>
@@ -24,6 +28,5 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 </style>
