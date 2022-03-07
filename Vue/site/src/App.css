@@ -1,7 +1,39 @@
 /* ======= FONT GOOGLE ======= */
-/* ======= FONT GOOGLE ======= */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 /* ======= GLOBAL ======= */
+:root {
+  /* ===== Colors ===== */
+  --tw-bg-opacity: 1;
+  --body-color: rgb(248 248 248/var(--tw-bg-opacity));
+  --white: #fff;
+  --scrollbar: #1857bc;
+  --color-1: #1857bc;
+  --color-hover-1: #002bff;
+  --color-2: #4ebaf5;
+
+  /* ===== transition ===== */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+  --tran-06: all 0.6s ease;
+  --tran-07: all 0.7s ease;
+  --tran-08: all 0.8s ease;
+  --tran-09: all 0.9s ease;
+}
+html::-webkit-scrollbar {
+  width: .5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: 10px;
+}
 body {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -45,7 +77,7 @@ p {
 }
 span {
   display: contents;
-  color: #fe5f59;
+  color: var(--color-2);
 }
 /* ======= ALL BUTTON CSS ======= */
 .main-btn {
@@ -148,38 +180,38 @@ span {
     transform: rotate(-130deg);
   }
 }
-/* .container-fluid,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
+.container,.container-fluid,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.5rem);
-  padding-left: var(--bs-gutter-x, 0.5rem);
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 576px) {
-  .container-sm {
+  .container,.container-sm {
     max-width: 100%;
   }
 }
 @media (min-width: 768px) {
-  .container-md,.container-sm {
+  .container,.container-md,.container-sm {
     max-width: 100%;
   }
 }
 @media (min-width: 992px) {
-  .container-lg,.container-md,.container-sm {
+  .container,.container-lg,.container-md,.container-sm {
     max-width: 100%;
   }
 }
 @media (min-width: 1200px) {
-  .container-lg,.container-md,.container-sm,.container-xl {
+  .container,.container-lg,.container-md,.container-sm,.container-xl {
     max-width: 100%;
   }
 }
 @media (min-width: 1400px) {
-  .container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
+  .container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
     max-width: 1320px;
   }
 }
 .navbar .container-fluid {
   align-items: stretch;
-} */
+}

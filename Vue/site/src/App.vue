@@ -3,25 +3,19 @@
     <AppHome/>
   </div>
 </template>
-
 <script>
 import AppHome from './views/Home.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import 'font-awesome/css/font-awesome.css'
 import './App.css'
-
 export default {
   name: 'App',
   components: {
     AppHome
-  },
-  methods: {
-
   }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

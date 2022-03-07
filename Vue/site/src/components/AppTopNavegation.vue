@@ -7,33 +7,15 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img class="image" src="../assets/img/header/Logo-Preta.png" alt="">
+              <img class="image" :src="appLogo" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+              <i class="fa fa-solid fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" data-scroll-nav="0" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-scroll-nav="1" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-scroll-nav="2" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-scroll-nav="3" href="#">Testimonial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-scroll-nav="4" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-scroll-nav="5" href="#">FAQ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-scroll-nav="6" href="#">Download</a>
+                <li class="nav-item" v-for="( link, index ) in router" :key="index">
+                  <router-link class="nav-link" :to="{ name: link.name }">{{ link.text }}</router-link>
                 </li>
               </ul>
             </div>
@@ -46,85 +28,170 @@
   <!-- ======= HEADER END ======= -->
 </template>
 <script>
-export default {
-  name: "AppTopNavegation",
-  components: {
-
+  import debounce from 'lodash/debounce';
+  import {mapState} from 'vuex'
+  export default {
+    name: "AppTopNavigator",
+    computed: {
+      ...mapState([
+        'appLogo',
+        'router'
+      ])
+    },
+    methods: {
+      handleScroll() {
+        this.isUserScrolling = (window.scrollY > 0);
+        let navbar = document.querySelector('.header-area .navbar-area')
+        window.onscroll = () => {
+          navbar.classList.remove('sticky')
+          if (window.scrollY > 0){
+            document.querySelector('.navbar-area').classList.add('sticky')
+          }
+          else{
+            document.querySelector('.navbar-area').classList.remove('sticky')
+          }
+        }
+      },
+    },
+    mounted() {
+      this.handleDebouncedScroll = debounce(this.handleScroll, 10);
+      window.addEventListener('scroll', this.handleDebouncedScroll);
+    },
   }
-}
 </script>
 <style scoped>
   /* ======= NAVBAR CSS ======= */
-.navbar-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9;
-}
-.sticky {
-  position: fixed;
-  background: #fff;
-  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
-}
-.navbar {
-  position: relative;
-  padding: 20px 0;
-}
-.navbar-brand .image {
-  max-width: 150px;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px),
-  (max-width: 767px) {
-  .navbar-collapse {
+  .navbar-area {
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 5px 12px;
-    background-color: #fff;
-    box-shadow: 0 15px 20px 0 rgb(0 0 0 / 10%);
+    z-index: 9;
+    transition: var( --tran-02);
   }
-}
-.navbar-light .navbar-toggler {
-  color: transparent;
-  border-color: transparent;
-}
-.navbar-nav .nav-item {
-  position: relative;
-  margin-left: 40px;
-}
-.navbar-nav .nav-item .nav-link {
-  position: relative;
-  padding: 10px 0;
-  font-size: 18px;
-  font-weight: 400;
-  color: #38424d;
-}
-.navbar-nav .nav-item .nav-link.active,
-.navbar-nav .nav-item .nav-link:hover {
-  color: #ff846f;
-}
-.navbar-nav .nav-item .nav-link::before {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  bottom: 0;
-  left: 50%;
-  border-radius: 50%;
-  background-color: #38424d;
-  opacity: 0;
-  transition: all 0.3 ease-out 0s;
-}
-@media only screen and (min-width: 768px) and (max-width: 991px),
-  (max-width: 767px) {
-  .navbar-nav .nav-item .nav-link::before {
+  .sticky {
+    position: fixed;
+    background: var(--white);
+    box-shadow: 0 1rem 2rem 0 rgb(0 0 0 / 10%);
+  }
+  .navbar {
     position: relative;
+    padding: 1rem 0;
   }
-}
-.navbar-nav .nav-item .nav-link.active::before,
-.navbar-nav .nav-item .nav-link:hover::before {
-  opacity: 1;
-}
+  .navbar-brand .image {
+    max-width: 8rem;
+  }
+  .navbar-light .navbar-toggler {
+    color: var(--color-1);
+    border: .15rem solid var(--color-1);
+  }
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .navbar-nav .nav-item {
+    position: relative;
+    margin-left: 1rem;
+  }
+  .navbar-nav .nav-item .nav-link {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-1);
+  }
+  .navbar-nav .nav-item .nav-link:focus,
+  .navbar-nav .nav-item .nav-link:hover {
+    color: var(--color-1);
+  }
+  .navbar-light .navbar-nav .nav-link.disabled {
+    color: rgba(24, 87, 188, 0.5);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu{
+    background: var(--white);
+    color: var(--color-1);
+    border-color: var(--color-1);
+    border-radius: .5rem;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item {
+    padding: 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: .5rem;
+    color: var(--color-1);
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item:hover {
+    color: var(--white);
+    background: var(--color-1);
+  }
+  .navbar-nav .nav-item .nav-link.active,
+  .navbar-nav .nav-item .nav-link:hover {
+    color: var(--color-hover-1);
+  }
+  .navbar-nav .nav-item .dropdown-menu .dropdown-item::before,
+  .navbar-nav .nav-item .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: .1rem;
+    bottom: .5rem;
+    left: 50%;
+    background-color: var(--color-1);
+    opacity: 0;
+    transition: all 0.3 ease-out 0s;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu{
+      background: transparent;
+    }
+    .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item:hover {
+      background: transparent;
+    }
+    .navbar-collapse {
+      padding: .5rem 1rem;
+      position: fixed;
+      top: 5rem;
+      bottom: 0;
+      left: 100%;
+      width: 100%;
+      overflow-y: auto;
+      visibility: hidden;
+      color: var(--color-1);
+      background: var(--white);
+      transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+    }
+    .navbar-collapse.show{
+      visibility: visible;
+      transform: translateX(-100%);
+    }
+    .navbar-nav .nav-item {
+      margin-left: 0;
+    }
+    .navbar-nav .nav-item .nav-link{
+      left: 0;
+      margin-bottom: 1.5rem;
+    }
+    .navbar-nav .nav-item .nav-link::before {
+      position: relative;
+    }
+  }
+  .navbar-nav .nav-item .nav-link.active::before {
+    opacity: 1;
+    left: 15%;
+    width: 70%;
+  }
+  .navbar-nav .nav-item .nav-link:hover::before{
+    opacity: 1;
+    left: 15%;
+    width: 70%;
+    transition: .5s all;
+  }
+  .nav-link.private {
+    border: 1px solid var(--color-1);
+    border-radius: .5rem;
+    width: 10rem;
+  }
 </style>
