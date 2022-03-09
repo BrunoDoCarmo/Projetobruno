@@ -4,7 +4,7 @@ import Parceiros from '../views/Parceiros.vue'
 import Contato from '../views/Contato.vue'
 import Area_do_Cliente from '../views/Area_do_Cliente.vue'
 export default {
-  appLogo: require("../assets/img/header/Logo-Preta.png"),
+  imgLogo: require("../assets/img/Logo-Preta.png"),
   appNavLinks: [
     {
       id: '',
@@ -58,5 +58,11 @@ export default {
       component: Area_do_Cliente,
       text: 'Área do Cliente'
     },
-  ]
+  ],
+  homeDescription1: 'BDS - Informática',
+  homeDescription2: 'Software, Sites e App para uma melhor gestão do seu negócio!',
+  homeDescription3: 'Pensado em todos os tamanhos de lojas, tendo o controle de forma fácil e simples sem tirar o foco do mais importante. ',
+  homeDescription4: 'VENDER!',
+  imgProgrammer: require("../assets/img/programmer.jpg"),
+  imgUser: require("../assets/img/user.jpg"),
 }

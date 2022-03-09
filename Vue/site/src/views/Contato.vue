@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-import AppPreloader from '../components/AppPreloader.vue'
-import AppTopNavegation from '../components/AppTopNavegation.vue'
-import AppWelcome from '../components/AppWelcome.vue'
+import AppPreloader from '../components/preloader.vue'
+import AppTopNavegation from '../components/navegation.vue'
+import AppWelcome from '../components/welcome.vue'
 export default {
   name: "AppContato",
   components: {

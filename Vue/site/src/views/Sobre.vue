@@ -6,8 +6,8 @@
   </div>
 </template>
 <script>
-import AppPreloader from '../components/AppPreloader.vue'
-import AppTopNavegation from '../components/AppTopNavegation.vue'
+import AppPreloader from '../components/preloader.vue'
+import AppTopNavegation from '../components/navegation.vue'
 // import AppWelcome from '../components/AppWelcome.vue'
 export default {
   name: "AppSobre",

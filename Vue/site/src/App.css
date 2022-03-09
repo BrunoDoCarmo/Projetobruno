@@ -7,7 +7,7 @@
   --body-color: rgb(248 248 248/var(--tw-bg-opacity));
   --white: #fff;
   --scrollbar: #1857bc;
-  --color-1: #1857bc;
+  --color-1: #4ebaf5;
   --color-hover-1: #002bff;
   --color-2: #4ebaf5;
 
@@ -38,12 +38,14 @@ body {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   color: #747e74;
+  background: var(--body-color);
   overflow-x: hidden;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: var(--tran-07);
 }
 img {
   max-width: 100%;
@@ -81,32 +83,43 @@ span {
 }
 /* ======= ALL BUTTON CSS ======= */
 .main-btn {
-  display: inline-block;
-  padding: 0 25px;
-  font-size: 16px;
+  padding: 0 10px;
+  font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
   line-height: 55px;
-  border: 2px solid #0898ef;
+  border: 2px solid var(--color-1);
   border-radius: 5px;
-  background: #0898ef;
-  color: #fff;
+  color: var(--color-1);
+  transition: var(--tran-05);
 }
 .main-btn:hover {
-  background: rgba(8, 152, 231, 0.7);
-  color: #fff;
+  background: var(--color-1);
+  color: var(--white);
+}
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="text"] {
+  padding: 0 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 55px;
+  border: 2px solid var(--color-1);
+  border-radius: 5px;
+}
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus {
+  border: 2px solid var(--color-1);
+  box-shadow: none;
+}
+section,
+footer {
+  padding: 5rem 0;
 }
 /* ======= ALL ANIMATION ======= */
-@keyframes video {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}
 @keyframes bounceTop-1 {
   0%,
   100% {
@@ -209,7 +222,7 @@ span {
 }
 @media (min-width: 1400px) {
   .container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
-    max-width: 1320px;
+    max-width: 90%;
   }
 }
 .navbar .container-fluid {

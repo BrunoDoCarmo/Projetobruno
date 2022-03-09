@@ -17,7 +17,7 @@
         <div class="col-lg-4">
           <div class="single-feature wow fadeInUp" data-wow-duration="3s" data-wow-delay="0.2s">
             <div class="icon color-1">
-              <i class="fas fa-hand-pointer"></i>
+              <i class="fa fa-stethoscope"></i>
             </div>
             <div class="content">
               <h3>Easy To Usep</h3>
@@ -30,7 +30,7 @@
         <div class="col-lg-4">
           <div class="single-feature wow fadeInUp" data-wow-duration="3s" data-wow-delay="0.4s">
             <div class="icon color-2">
-              <i class="fas fa-hand-holding-usd"></i>
+              <i class="fa fa-stethoscope"></i>
             </div>
             <div class="content">
               <h3>Save Your Mony</h3>
@@ -43,7 +43,7 @@
         <div class="col-lg-4">
           <div class="single-feature wow fadeInUp" data-wow-duration="3s" data-wow-delay="0.6s">
             <div class="icon color-3">
-              <i class="fas fa-stethoscope"></i>
+              <i class="fa fa-stethoscope"></i>
             </div>
             <div class="content">
               <h3>Fully Responsive</h3>
@@ -92,7 +92,7 @@
     top: -8px;
     right: -8px;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.3;
     transition: all 0.3s ease-out 0s;
   }
   .feature-section .single-feature:hover .icon::after {
