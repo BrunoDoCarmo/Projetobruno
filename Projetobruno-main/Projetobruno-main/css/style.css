@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root {
+  /* ===== Colors ===== */
+  --body-color: #EEE;
+  --scrollbar1: #FFF;
+  --scrollbar2: #1857bc;
+
+  /* ===== transition ===== */
+  --tran-02: all .2s ease;
+  --tran-03: all .3s ease;
+  --tran-04: all .4s ease;
+  --tran-05: all .5s ease;
+  --tran-06: all .6s ease;
+  --tran-07: all .7s ease;
+  --tran-08: all .8s ease;
+  --tran-09: all .9s ease;
+}
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background: var(--body-color);
+}
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar1);
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--scrollbar2);
+}
+section, footer {
+  padding: 5rem 9%;
+}

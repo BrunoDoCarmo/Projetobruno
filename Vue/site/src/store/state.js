@@ -1,63 +1,41 @@
 import Home from '../views/Home.vue'
-import Sobre from '../views/Sobre.vue'
-import Parceiros from '../views/Parceiros.vue'
-import Contato from '../views/Contato.vue'
-import Area_do_Cliente from '../views/Area_do_Cliente.vue'
+import Sobre from '../views/About.vue'
+// import Parceiros from '../views/Parceiros.vue'
+// import Contato from '../views/Contato.vue'
+// import Area_do_Cliente from '../views/Area_do_Cliente.vue'
 export default {
   imgLogo: require("../assets/img/Logo-Preta.png"),
-  appNavLinks: [
-    {
-      id: '',
-      text: 'Home'
-    },
-    {
-      id: '',
-      text: 'Sobre'
-    },
-    {
-      id: '',
-      text: 'Parceiros'
-    },
-    {
-      id: '',
-      text: 'Contato'
-    },
-    {
-      id: '',
-      text: 'Área do Cliente'
-    }
-  ],
   router: [
     {
       path: '/',
       name: 'Home',
       component: Home,
-      text: 'Home',
+      text: 'Home'
     },
     {
       path: '/Sobre',
       name: 'Sobre',
       component: Sobre,
-      text: 'Sobre',
+      text: 'Sobre'
     },
-    {
-      path: '/Parceiros',
-      name: 'Parceiros',
-      component: Parceiros,
-      text: 'Parceiros'
-    },
-    {
-      path: '/Contatos',
-      name: 'Contato',
-      component: Contato,
-      text: 'Contato'
-    },
-    {
-      path: '/Area_do_Cliente',
-      name: 'Área do Cliente',
-      component: Area_do_Cliente,
-      text: 'Área do Cliente'
-    },
+    // {
+    //   path: '/Parceiros',
+    //   name: 'Parceiros',
+    //   component: Parceiros,
+    //   text: 'Parceiros'
+    // },
+    // {
+    //   path: '/Contatos',
+    //   name: 'Contato',
+    //   component: Contato,
+    //   text: 'Contato'
+    // },
+    // {
+    //   path: '/Area_do_Cliente',
+    //   name: 'Área do Cliente',
+    //   component: Area_do_Cliente,
+    //   text: 'Área do Cliente'
+    // },
   ],
   homeDescription1: 'BDS - Informática',
   homeDescription2: 'Software, Sites e App para uma melhor gestão do seu negócio!',

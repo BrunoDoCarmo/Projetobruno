@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root {
+  /* ===== Colors ===== */
+  --body-color: #E4E9F7;
+  --sidebar-color: #FFF;
+  --primary-color: #695CFE;
+  --primary-color-light: #ccc;
+  --toggle-color: #201B2C;
+  --text-color: #373535;
+  --text-color-hover: #373535;
+  --black1: #000;
+  --black2: #c6c6c6;
+  --black3: #eee;
+  --white: #FFF;
+  --login-color: #77ffc0;
+  --login-card-color: #00ff88;
+  --bk-color: #201b2c;
+  --bk-card-color: #2f2841;
+
+  /* ===== transition ===== */
+  --tran-02: all .2s ease;
+  --tran-03: all .3s ease;
+  --tran-04: all .4s ease;
+  --tran-05: all .5s ease;
+  --tran-06: all .6s ease;
+  --tran-07: all .7s ease;
+  --tran-08: all .8s ease;
+  --tran-09: all .9s ease;
+}
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+a{
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+html::-webkit-scrollbar {
+  width: 0.75rem;
+}
+html::-webkit-scrollbar-track {
+	background: var(--white);
+}
+html::-webkit-scrollbar-thumb {
+	border-radius: .5rem;
+  background: var(--black1);
+}
+body {
+  height: 100vh;
+  background: var(--body-color);
+  transition: var(--tran-05);
+}
+section {
+  padding: 5rem 0;
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--black1);
+  color: var(--black1);
+  cursor: pointer;
+  background: none;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+}
+.btn:hover {
+  background: var(--black1);
+  color: var(--white);
+}
+.heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  color: var(--black1);
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--black1);
+}
+h6 {
+  color: var(--black3);
+}
+button {
+  font-size: 0.8rem;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  background-color: var(--black1);
+  color: aliceblue;
+  padding: 13px 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.hr {
+  width: 100%;
+  height: 2px;
+  background: var(--black2);
+  opacity: 0.2;
+}
