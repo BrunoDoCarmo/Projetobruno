@@ -28,39 +28,18 @@
   <!-- ======= HEADER END ======= -->
 </template>
 <script>
-  import debounce from 'lodash/debounce';
   import {mapState} from 'vuex'
   export default {
-    name: "AppTopNavigator",
+    name: "AppNavigator",
     computed: {
       ...mapState([
         'imgLogo',
         'router'
       ])
-    },
-    methods: {
-      handleScroll() {
-        this.isUserScrolling = (window.scrollY > 0);
-        let navbar = document.querySelector('.header-area .navbar-area')
-        window.onscroll = () => {
-          navbar.classList.remove('sticky')
-          if (window.scrollY > 0){
-            document.querySelector('.navbar-area').classList.add('sticky')
-          }
-          else{
-            document.querySelector('.navbar-area').classList.remove('sticky')
-          }
-        }
-      },
-    },
-    mounted() {
-      this.handleDebouncedScroll = debounce(this.handleScroll, 10);
-      window.addEventListener('scroll', this.handleDebouncedScroll);
-    },
+    }
   }
 </script>
 <style scoped>
-  /* ======= NAVBAR CSS ======= */
   .navbar-area {
     position: fixed;
     top: 0;
@@ -75,7 +54,7 @@
     padding: 1rem 0;
   }
   .navbar-brand .image {
-    max-width: 8rem;
+    max-width: 15rem;
   }
   .navbar-light .navbar-toggler {
     color: var(--color-1);
@@ -83,7 +62,6 @@
   }
   .navbar-nav {
     display: flex;
-    flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
@@ -94,7 +72,7 @@
   }
   .navbar-nav .nav-item .nav-link {
     position: relative;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 400;
     color: var(--color-1);
   }
@@ -106,62 +84,24 @@
     content: '';
     position: absolute;
     width: 0;
-    height: .1rem;
+    height: .2rem;
     bottom: .5rem;
     left: 50%;
     background-color: var(--color-1);
     opacity: 0;
     transition: all 0.3 ease-out 0s;
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-    .navbar-collapse {
-      padding: .5rem 1rem;
-      position: fixed;
-      top: 5rem;
-      bottom: 0;
-      left: 100%;
-      width: 100%;
-      overflow-y: auto;
-      visibility: hidden;
-      color: var(--color-1);
-      background: var(--white);
-      transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-    }
-    .navbar-collapse.show {
-      visibility: visible;
-      transform: translateX(-100%);
-    }
-    .navbar-nav .nav-item {
-      margin-left: 0;
-    }
-    .navbar-nav .nav-item .nav-link{
-      left: 0;
-      margin-bottom: 1.5rem;
-      color: var(--color-1);
-      text-shadow: 0 0 0 rgba(0, 0, 0, 0.75);
-    }
-    .navbar-nav .nav-item .nav-link:focus,
-    .navbar-nav .nav-item .nav-link:hover {
-      color: var(--color-1);
-    }
-    .navbar-nav .nav-item .nav-link::before {
-      position: relative;
-    }
-  }
+  .navbar-nav .nav-item .nav-link:hover::before,
   .navbar-nav .nav-item .nav-link.active::before {
     opacity: 1;
-    left: 15%;
-    width: 70%;
-  }
-  .navbar-nav .nav-item .nav-link:hover::before{
-    opacity: 1;
-    left: 15%;
-    width: 70%;
+    left: 10%;
+    width: 80%;
     transition: .5s all;
   }
-  .nav-link.private {
-    border: 1px solid var(--color-1);
-    border-radius: .5rem;
-    width: 10rem;
+  @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+    .navbar-nav .nav-item .nav-link:hover::before,
+    .navbar-nav .nav-item .nav-link.active::before {
+      opacity: 0;
+    }
   }
 </style>

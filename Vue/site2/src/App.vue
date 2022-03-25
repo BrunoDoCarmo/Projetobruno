@@ -4,22 +4,23 @@
       <AppPreloader/>
     </div>
     <div class="main">
-      <Home/>
+      <AppHome/>
     </div>
   </div>
 </template>
 <script>
   import AppPreloader from './components/AppPreloader.vue'
-  import Home from './views/Home.vue'
+  import AppHome from './views/Home.vue'
   import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-icons/font/bootstrap-icons.css'
   import 'bootstrap/dist/js/bootstrap.js'
-  import 'font-awesome/css/font-awesome.css'
+  // import 'font-awesome/css/font-awesome.css'
   import './App.css'
   export default {
     name: 'App',
     components: {
       AppPreloader,
-      Home
+      AppHome
     },
     methods: {
       eventHandler() {

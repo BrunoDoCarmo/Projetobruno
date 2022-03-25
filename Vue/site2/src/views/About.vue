@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div class="about">
     <AppNavegation/>
 
     <AppAbout/>
   </div>
 </template>
 <script>
-  import AppAbout from '../components/AppAbout.vue'
+  import AppNavegation from '../components/AppNavegation.vue'
+  import AppAbout from '../components/about/AppAbout.vue'
   export default {
     name: "AppAbout",
     components: {
+      AppNavegation,
       AppAbout
     }
   }

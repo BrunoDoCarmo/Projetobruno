@@ -1,15 +1,16 @@
 /* ======= FONT GOOGLE ======= */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 /* ======= GLOBAL ======= */
 :root {
   /* ===== Colors ===== */
   --tw-bg-opacity: 1;
   --body-color: rgb(248 248 248/var(--tw-bg-opacity));
   --white: #fff;
+  --black: #000;
   --scrollbar: #1857bc;
   --color-1: #4ebaf5;
+  --color-2: #1857bc;
   --color-hover-1: #002bff;
-  --color-2: #4ebaf5;
 
   /* ===== transition ===== */
   --tran-02: all 0.2s ease;
@@ -21,24 +22,28 @@
   --tran-08: all 0.8s ease;
   --tran-09: all 0.9s ease;
 }
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  overflow-x: hidden;
+}
 html::-webkit-scrollbar {
   width: .5rem;
 }
-
 html::-webkit-scrollbar-track {
   background: var(--white);
   border-radius: 10px;
 }
-
 html::-webkit-scrollbar-thumb {
   background: var(--scrollbar);
   border-radius: 10px;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open+Sans', sans-serif;
   font-style: normal;
-  color: #747e74;
   background: var(--body-color);
+  color: var(--black);
   overflow-x: hidden;
 }
 * {
@@ -62,7 +67,6 @@ a {
 h1, h3, h4 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #38424d;
 }
 h3 {
   font-size: 28px;
@@ -74,12 +78,11 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #747e74;
   margin: 0;
 }
 span {
   display: contents;
-  color: var(--color-2);
+  color: var(--color-1);
 }
 /* ======= ALL BUTTON CSS ======= */
 .main-btn {
@@ -92,6 +95,7 @@ span {
   border-radius: 5px;
   color: var(--color-1);
   transition: var(--tran-05);
+  background: transparent;
 }
 .main-btn:hover {
   background: var(--color-1);
@@ -115,9 +119,14 @@ input[type="text"]:focus {
   border: 2px solid var(--color-1);
   box-shadow: none;
 }
-section,
-footer {
-  padding: 5rem 0;
+section {
+  padding: 5rem 9%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  section {
+    padding: 5rem 2%;
+  }
 }
 /* ======= ALL ANIMATION ======= */
 @keyframes bounceTop-1 {
